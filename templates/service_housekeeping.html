@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>家政预约 - 幸福家园社区</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="/"><i class="bi bi-house-heart-fill text-primary"></i> 幸福家园社区</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="main-nav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="/">首页</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/news">通知公告</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/contact">联系我们</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container py-5">
+        <div class="text-center mb-5">
+            <i class="bi bi-house-heart display-1 text-primary"></i>
+            <h1 class="fw-light mt-3">家政服务预约</h1>
+            <p class="lead text-muted">专业团队，贴心服务，让您的家焕然一新。</p>
+        </div>
+
+        <div class="row g-5">
+            <div class="col-md-5">
+                <div class="card h-100">
+                    <div class="card-header bg-primary text-white">
+                        <h4 class="mb-0">服务详情</h4>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">服务范围</h5>
+                        <p class="card-text">我们提供包括日常保洁、深度清洁、新居开荒、月嫂、育儿嫂及老年人护工等全方位家政服务。</p>
+                        <hr>
+                        <h5 class="card-title">服务时间</h5>
+                        <p class="card-text">每日 <strong>8:00 - 18:00</strong>，节假日不休，请至少提前一天预约。</p>
+                        <hr>
+                        <h5 class="card-title">收费标准</h5>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                日常保洁
+                                <span class="badge bg-primary rounded-pill">50元 / 小时</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                月嫂服务
+                                <span class="badge bg-primary rounded-pill">400元 / 天</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                护工服务
+                                <span class="badge bg-primary rounded-pill">300元 / 天</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-7">
+                <div class="card shadow-sm">
+                    <div class="card-body p-4">
+                        <h3 class="card-title mb-4">在线预约申请</h3>
+                        <form action="/submit_housekeeping" method="post">
+                            <div class="mb-3">
+                                <label for="name" class="form-label">您的姓名</label>
+                                <input type="text" class="form-control" id="name" name="name" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="phone" class="form-label">联系电话</label>
+                                <input type="tel" class="form-control" id="phone" name="phone" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="serviceType" class="form-label">服务类型</label>
+                                <select class="form-select" id="serviceType" name="service_type" required>
+                                    <option selected disabled value="">请选择...</option>
+                                    <option value="保洁">日常保洁</option>
+                                    <option value="月嫂">月嫂服务</option>
+                                    <option value="护工">护工服务</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="serviceDate" class="form-label">期望服务日期</label>
+                                <input type="date" class="form-control" id="serviceDate" name="service_date" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="remarks" class="form-label">备注信息</label>
+                                <textarea class="form-control" id="remarks" name="remarks" rows="3" placeholder="如有特殊要求，请在此说明..."></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100 btn-lg">提交预约申请</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="mt-5 bg-dark text-white py-4 text-center">
+        <div class="container">
+            <p class="mb-1">地址：北京市朝阳区建国路88号幸福社区 | 电话：010-87654321</p>
+            <p class="mb-0">© 2025 幸福家园社区服务中心. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

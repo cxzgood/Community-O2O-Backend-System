@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>老年餐预订 - 幸福家园社区</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <style>
+        .service-card {
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        .service-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="/"><i class="bi bi-house-heart-fill text-primary"></i> 幸福家园社区</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="main-nav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="/">首页</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/news">通知公告</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/contact">联系我们</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container py-5">
+        <div class="text-center mb-5">
+            <i class="bi bi-cup-straw display-1 text-warning"></i>
+            <h1 class="fw-light mt-3">老年助残营养餐</h1>
+            <p class="lead text-muted">科学配比，健康美味，为您的健康保驾护航。</p>
+        </div>
+
+        <div class="alert alert-warning d-flex align-items-center" role="alert">
+            <i class="bi bi-info-circle-fill flex-shrink-0 me-2"></i>
+            <div>
+                <strong>温馨提示:</strong> 为保证食材新鲜，请至少提前一天预订。每日送餐时间为 <strong>11:30 - 12:30</strong>。
+            </div>
+        </div>
+
+        <h3 class="fw-light text-center my-5">今日推荐</h3>
+        <div class="row row-cols-1 row-cols-md-2 g-4 mb-5">
+            <div class="col">
+                <div class="card h-100 service-card">
+                    <img src="../static/images/红烧狮子头.jpg"" class="card-img-top" alt="营养套餐A" style="height: 250px; object-fit: cover;">
+                    <div class="card-body">
+                        <h5 class="card-title">今日精选菜品</h5>
+                        <p class="card-text">红烧狮子头</p>
+                    </div>
+                    <div class="card-footer text-end">
+                        <strong class="fs-5 text-danger">15元 / 份</strong>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 service-card">
+                    <img src="../static/images/番茄炒蛋.jpg" class="card-img-top" alt="素食套餐B" style="height: 250px; object-fit: cover;">
+                    <div class="card-body">
+                        <h5 class="card-title">今日精选菜品</h5>
+                        <p class="card-text">番茄炒蛋</p>
+                    </div>
+                    <div class="card-footer text-end">
+                         <strong class="fs-5 text-danger">12元 / 份</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card shadow-sm">
+            <div class="card-body p-4">
+                 <h3 class="card-title mb-4 text-center">在线预订</h3>
+                 <form action="/submit_meal" method="post">
+                     <div class="row g-3">
+                         <div class="col-md-6">
+                             <label for="name" class="form-label">您的姓名</label>
+                             <input type="text" class="form-control" id="name" name="name" required>
+                         </div>
+                         <div class="col-md-6">
+                            <label for="phone" class="form-label">联系电话</label>
+                            <input type="tel" class="form-control" id="phone" name="phone" required>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="mealType" class="form-label">套餐类型</label>
+                            <select class="form-select" id="mealType" name="meal_type" required>
+                                <option selected disabled value="">请选择...</option>
+                                <option value="A">营养套餐A</option>
+                                <option value="B">素食套餐B</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="mealDate" class="form-label">预订用餐日期</label>
+                            <input type="date" class="form-control" id="mealDate" name="meal_date" required>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="quantity" class="form-label">份数</label>
+                            <input type="number" class="form-control" id="quantity" name="quantity" value="1" min="1" required>
+                        </div>
+                        <div class="col-12 mt-4">
+                             <button type="submit" class="btn btn-warning w-100 btn-lg">确认预订</button>
+                        </div>
+                     </div>
+                 </form>
+            </div>
+        </div>
+    </main>
+
+    <footer class="mt-5 bg-dark text-white py-4 text-center">
+        <div class="container">
+            <p class="mb-1">地址：北京市朝阳区建国路88号幸福社区 | 电话：010-87654321</p>
+            <p class="mb-0">© 2025 幸福家园社区服务中心. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
